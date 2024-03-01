@@ -1,0 +1,72 @@
+{
+  "id": "f4a7d7de-2a21-4022-bdc9-b40733758646",
+  "version": "2.0",
+  "name": "download",
+  "url": "https://arxiv.org",
+  "tests": [{
+    "id": "78231308-956c-4ba7-b534-2afbd09ee3a7",
+    "name": "download pdf",
+    "commands": [{
+      "id": "b5937a78-7020-4004-9f93-3ece75bef874",
+      "comment": "",
+      "command": "open",
+      "target": "/list/cs/new",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f012082-3cbd-47f8-a92d-500b20a81bb6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1296x696",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc99b658-9f4e-4cb5-9e0a-02b5d5d4f39c",
+      "comment": "",
+      "command": "click",
+      "target": "css=h3:nth-child(9)",
+      "targets": [
+        ["css=h3:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='dlpage']/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a58a1d98-a4cc-40fa-8ed2-55b48190ad16",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h3:nth-child(9)",
+      "targets": [
+        ["css=h3:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='dlpage']/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"]
+      ],
+      "value": "New submissions for Fri, 1 Mar 24"
+    }, {
+      "id": "25773e67-cf93-4e43-9566-17e1c7306db5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'pdf')]",
+      "targets": [
+        ["linkText=pdf", "linkText"],
+        ["css=dl:nth-child(10) > dt:nth-child(1) a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'pdf')]", "xpath:link"],
+        ["xpath=//div[@id='dlpage']/dl/dt/span/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/pdf/2402.18576')]", "xpath:href"],
+        ["xpath=//span/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'pdf')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f84402ca-68a3-41d7-b157-ee0b79f0460b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["78231308-956c-4ba7-b534-2afbd09ee3a7"]
+  }],
+  "urls": ["https://arxiv.org/"],
+  "plugins": []
+}
